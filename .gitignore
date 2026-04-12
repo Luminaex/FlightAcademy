@@ -7,3 +7,5 @@ steam.txt
 # Spell-checker tooling — not mission content
 cspell.json
 .cspell/
+
+.vscode/
