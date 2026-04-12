@@ -1,0 +1,16 @@
+{
+    // ── Arma 3 file associations ──────────────────────────────────────────────
+    // .hpp and .ext use C preprocessor/config syntax — map to cpp for
+    // full syntax highlighting, bracket matching, and folding out of the box.
+    // .sqf picks up correct highlighting once the SQF Language extension is
+    // installed; falls back to plaintext without it.
+    "files.associations": {
+        "*.hpp": "cpp",
+        "*.ext": "cpp",
+        "*.sqf": "sqf"
+    },
+
+    // ── Recommended extensions prompt ────────────────────────────────────────
+    // VS Code will suggest these to anyone who opens this workspace.
+    // See extensions.json for the full list.
+}

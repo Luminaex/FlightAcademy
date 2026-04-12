@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="FlightTest">
+    <Package name="FlightInstructor">
+
+        <!-- ── UI Panel ──────────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Panel_Players">
+            <English>PLAYERS</English>
+            <French>JOUEURS</French>
+            <German>SPIELER</German>
+            <Spanish>JUGADORES</Spanish>
+            <Italian>GIOCATORI</Italian>
+            <Portuguese>JOGADORES</Portuguese>
+            <Russian>ИГРОКИ</Russian>
+            <Arabic>اللاعبون</Arabic>
+        </Key>
+        <Key ID="STR_FI_Panel_Solo">
+            <English>%1 (solo)</English>
+            <French>%1 (solo)</French>
+            <German>%1 (solo)</German>
+            <Spanish>%1 (solo)</Spanish>
+            <Italian>%1 (solo)</Italian>
+            <Portuguese>%1 (solo)</Portuguese>
+            <Russian>%1 (соло)</Russian>
+            <Arabic>%1 (منفرد)</Arabic>
+        </Key>
+        <Key ID="STR_FI_Hint_Keybinds">
+            <English>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleport    &lt;t color='#CCCCCC'&gt;Shift+click&lt;/t&gt;  Time trial</English>
+            <French>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Téléporter    &lt;t color='#CCCCCC'&gt;Maj+clic&lt;/t&gt;  Contre-la-montre</French>
+            <German>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleportieren    &lt;t color='#CCCCCC'&gt;Umschalt+Klick&lt;/t&gt;  Zeitfahren</German>
+            <Spanish>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleportar    &lt;t color='#CCCCCC'&gt;Mayús+clic&lt;/t&gt;  Contrarreloj</Spanish>
+            <Italian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teletrasporto    &lt;t color='#CCCCCC'&gt;Maiusc+clic&lt;/t&gt;  Prova a tempo</Italian>
+            <Portuguese>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teletransportar    &lt;t color='#CCCCCC'&gt;Shift+clique&lt;/t&gt;  Contrarrelógio</Portuguese>
+            <Russian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Телепорт    &lt;t color='#CCCCCC'&gt;Shift+клик&lt;/t&gt;  Заезд на время</Russian>
+            <Arabic>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  نقل فوري    &lt;t color='#CCCCCC'&gt;Shift+نقر&lt;/t&gt;  سباق توقيت</Arabic>
+        </Key>
+
+        <!-- ── Buttons ───────────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Btn_SpawnM900">
+            <English>SPAWN M900</English>
+            <French>SPAWN M900</French>
+            <German>M900 SPAWNEN</German>
+            <Spanish>CREAR M900</Spanish>
+            <Italian>CREA M900</Italian>
+            <Portuguese>CRIAR M900</Portuguese>
+            <Russian>СОЗДАТЬ M900</Russian>
+            <Arabic>استدعاء M900</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_SpawnOrca">
+            <English>SPAWN ORCA</English>
+            <French>SPAWN ORCA</French>
+            <German>ORCA SPAWNEN</German>
+            <Spanish>CREAR ORCA</Spanish>
+            <Italian>CREA ORCA</Italian>
+            <Portuguese>CRIAR ORCA</Portuguese>
+            <Russian>СОЗДАТЬ ORCA</Russian>
+            <Arabic>استدعاء ORCA</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_TimeTrial">
+            <English>TIME TRIAL</English>
+            <French>CONTRE-LA-MONTRE</French>
+            <German>ZEITFAHREN</German>
+            <Spanish>CONTRARRELOJ</Spanish>
+            <Italian>PROVA A TEMPO</Italian>
+            <Portuguese>CONTRARRELÓGIO</Portuguese>
+            <Russian>ЗАЕЗД НА ВРЕМЯ</Russian>
+            <Arabic>سباق توقيت</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_RespawnCar">
+            <English>RESPAWN CAR</English>
+            <French>RÉAPPARAÎTRE VOITURE</French>
+            <German>AUTO RESPAWNEN</German>
+            <Spanish>CREAR COCHE</Spanish>
+            <Italian>RISPAWN AUTO</Italian>
+            <Portuguese>CRIAR CARRO</Portuguese>
+            <Russian>ВОЗРОДИТЬ МАШИНУ</Russian>
+            <Arabic>إعادة استدعاء السيارة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_PathOn">
+            <English>PATH: ON</English>
+            <French>CHEMIN : ON</French>
+            <German>PFAD: AN</German>
+            <Spanish>RUTA: SÍ</Spanish>
+            <Italian>PERCORSO: ON</Italian>
+            <Portuguese>ROTA: ON</Portuguese>
+            <Russian>МАРШРУТ: ВКЛ</Russian>
+            <Arabic>المسار: مفعّل</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_PathOff">
+            <English>PATH: OFF</English>
+            <French>CHEMIN : OFF</French>
+            <German>PFAD: AUS</German>
+            <Spanish>RUTA: NO</Spanish>
+            <Italian>PERCORSO: OFF</Italian>
+            <Portuguese>ROTA: OFF</Portuguese>
+            <Russian>МАРШРУТ: ВЫКЛ</Russian>
+            <Arabic>المسار: معطّل</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_Volume">
+            <English>VOLUME</English>
+            <French>VOLUME</French>
+            <German>LAUTSTÄRKE</German>
+            <Spanish>VOLUMEN</Spanish>
+            <Italian>VOLUME</Italian>
+            <Portuguese>VOLUME</Portuguese>
+            <Russian>ГРОМКОСТЬ</Russian>
+            <Arabic>مستوى الصوت</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_SetLanding">
+            <English>SET LANDING</English>
+            <French>DÉFINIR ATTERRISSAGE</French>
+            <German>LANDUNG FESTLEGEN</German>
+            <Spanish>FIJAR ATERRIZAJE</Spanish>
+            <Italian>IMPOSTA ATTERRAGGIO</Italian>
+            <Portuguese>DEFINIR POUSO</Portuguese>
+            <Russian>ЗАДАТЬ ПОСАДКУ</Russian>
+            <Arabic>تحديد نقطة الهبوط</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_MapPick">
+            <English>MAP PICK</English>
+            <French>CHOIX SUR CARTE</French>
+            <German>KARTENAUSWAHL</German>
+            <Spanish>ELEGIR EN MAPA</Spanish>
+            <Italian>SCEGLI MAPPA</Italian>
+            <Portuguese>ESCOLHER NO MAPA</Portuguese>
+            <Russian>ВЫБОР НА КАРТЕ</Russian>
+            <Arabic>اختيار من الخريطة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_ClearTask">
+            <English>CLEAR TASK</English>
+            <French>EFFACER TÂCHE</French>
+            <German>AUFGABE LÖSCHEN</German>
+            <Spanish>BORRAR TAREA</Spanish>
+            <Italian>CANCELLA COMPITO</Italian>
+            <Portuguese>LIMPAR TAREFA</Portuguese>
+            <Russian>СБРОСИТЬ ЗАДАНИЕ</Russian>
+            <Arabic>مسح المهمة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_Kavala">
+            <English>KAVALA</English>
+            <French>KAVALA</French>
+            <German>KAVALA</German>
+            <Spanish>KAVALA</Spanish>
+            <Italian>KAVALA</Italian>
+            <Portuguese>KAVALA</Portuguese>
+            <Russian>КАВАЛА</Russian>
+            <Arabic>كافالا</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_Here">
+            <English>HERE</English>
+            <French>ICI</French>
+            <German>HIER</German>
+            <Spanish>AQUÍ</Spanish>
+            <Italian>QUI</Italian>
+            <Portuguese>AQUI</Portuguese>
+            <Russian>ЗДЕСЬ</Russian>
+            <Arabic>هنا</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_Cancel">
+            <English>CANCEL</English>
+            <French>ANNULER</French>
+            <German>ABBRECHEN</German>
+            <Spanish>CANCELAR</Spanish>
+            <Italian>ANNULLA</Italian>
+            <Portuguese>CANCELAR</Portuguese>
+            <Russian>ОТМЕНА</Russian>
+            <Arabic>إلغاء</Arabic>
+        </Key>
+        <Key ID="STR_FI_Btn_Apply">
+            <English>APPLY</English>
+            <French>APPLIQUER</French>
+            <German>ÜBERNEHMEN</German>
+            <Spanish>APLICAR</Spanish>
+            <Italian>APPLICA</Italian>
+            <Portuguese>APLICAR</Portuguese>
+            <Russian>ПРИМЕНИТЬ</Russian>
+            <Arabic>تطبيق</Arabic>
+        </Key>
+
+        <!-- ── Dialog titles ─────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Dlg_SpawnWhere">
+            <English>SPAWN %1  —  WHERE?</English>
+            <French>SPAWN %1  —  OÙ ?</French>
+            <German>%1 SPAWNEN  —  WO?</German>
+            <Spanish>CREAR %1  —  ¿DÓNDE?</Spanish>
+            <Italian>CREA %1  —  DOVE?</Italian>
+            <Portuguese>CRIAR %1  —  ONDE?</Portuguese>
+            <Russian>СОЗДАТЬ %1  —  ГДЕ?</Russian>
+            <Arabic>استدعاء %1  —  أين؟</Arabic>
+        </Key>
+        <Key ID="STR_FI_Dlg_VolumeTitle">
+            <English>VOLUME</English>
+            <French>VOLUME</French>
+            <German>LAUTSTÄRKE</German>
+            <Spanish>VOLUMEN</Spanish>
+            <Italian>VOLUME</Italian>
+            <Portuguese>VOLUME</Portuguese>
+            <Russian>ГРОМКОСТЬ</Russian>
+            <Arabic>مستوى الصوت</Arabic>
+        </Key>
+        <Key ID="STR_FI_Dlg_TimerLabel">
+            <English>TIMER</English>
+            <French>CHRONO</French>
+            <German>TIMER</German>
+            <Spanish>TEMPORIZADOR</Spanish>
+            <Italian>CRONOMETRO</Italian>
+            <Portuguese>CRONÔMETRO</Portuguese>
+            <Russian>ТАЙМЕР</Russian>
+            <Arabic>المؤقت</Arabic>
+        </Key>
+
+        <!-- ── Notifications ─────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Notify_TaskClearedTitle">
+            <English>TASK CLEARED</English>
+            <French>TÂCHE EFFACÉE</French>
+            <German>AUFGABE GELÖSCHT</German>
+            <Spanish>TAREA BORRADA</Spanish>
+            <Italian>COMPITO ELIMINATO</Italian>
+            <Portuguese>TAREFA LIMPA</Portuguese>
+            <Russian>ЗАДАНИЕ СБРОШЕНО</Russian>
+            <Arabic>تم مسح المهمة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_TaskClearedMsg">
+            <English>Landing task has been cleared</English>
+            <French>La tâche d'atterrissage a été effacée</French>
+            <German>Die Landeaufgabe wurde gelöscht</German>
+            <Spanish>La tarea de aterrizaje ha sido borrada</Spanish>
+            <Italian>Il compito di atterraggio è stato eliminato</Italian>
+            <Portuguese>A tarefa de pouso foi limpa</Portuguese>
+            <Russian>Задание на посадку сброшено</Russian>
+            <Arabic>تم مسح مهمة الهبوط</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_LandingSetTitle">
+            <English>LANDING SET</English>
+            <French>ATTERRISSAGE DÉFINI</French>
+            <German>LANDUNG FESTGELEGT</German>
+            <Spanish>ATERRIZAJE FIJADO</Spanish>
+            <Italian>ATTERRAGGIO IMPOSTATO</Italian>
+            <Portuguese>POUSO DEFINIDO</Portuguese>
+            <Russian>ПОСАДКА ЗАДАНА</Russian>
+            <Arabic>تم تحديد نقطة الهبوط</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_MapPickTitle">
+            <English>MAP PICK MODE</English>
+            <French>MODE SÉLECTION CARTE</French>
+            <German>KARTENAUSWAHL-MODUS</German>
+            <Spanish>MODO ELECCIÓN EN MAPA</Spanish>
+            <Italian>MODALITÀ SCELTA MAPPA</Italian>
+            <Portuguese>MODO SELEÇÃO NO MAPA</Portuguese>
+            <Russian>РЕЖИМ ВЫБОРА НА КАРТЕ</Russian>
+            <Arabic>وضع الاختيار من الخريطة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_MapPickMsg">
+            <English>Click on the map to set a custom landing location.</English>
+            <French>Cliquez sur la carte pour définir un lieu d'atterrissage personnalisé.</French>
+            <German>Klicke auf die Karte, um einen benutzerdefinierten Landeplatz festzulegen.</German>
+            <Spanish>Haz clic en el mapa para fijar una ubicación de aterrizaje personalizada.</Spanish>
+            <Italian>Clicca sulla mappa per impostare un punto di atterraggio personalizzato.</Italian>
+            <Portuguese>Clique no mapa para definir um local de pouso personalizado.</Portuguese>
+            <Russian>Нажмите на карту, чтобы задать произвольное место посадки.</Russian>
+            <Arabic>انقر على الخريطة لتحديد موقع هبوط مخصص.</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_TeleportedTitle">
+            <English>TELEPORTED</English>
+            <French>TÉLÉPORTÉ</French>
+            <German>TELEPORTIERT</German>
+            <Spanish>TELETRANSPORTADO</Spanish>
+            <Italian>TELETRASPORTATO</Italian>
+            <Portuguese>TELETRANSPORTADO</Portuguese>
+            <Russian>ТЕЛЕПОРТИРОВАН</Russian>
+            <Arabic>تم النقل الفوري</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_TeleportedMsg">
+            <English>Moved to %1</English>
+            <French>Déplacé vers %1</French>
+            <German>Nach %1 versetzt</German>
+            <Spanish>Movido a %1</Spanish>
+            <Italian>Spostato a %1</Italian>
+            <Portuguese>Movido para %1</Portuguese>
+            <Russian>Перемещён в %1</Russian>
+            <Arabic>تم الانتقال إلى %1</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_SpawnBlockedTitle">
+            <English>SPAWN BLOCKED</English>
+            <French>SPAWN BLOQUÉ</French>
+            <German>SPAWN BLOCKIERT</German>
+            <Spanish>CREACIÓN BLOQUEADA</Spanish>
+            <Italian>SPAWN BLOCCATO</Italian>
+            <Portuguese>CRIAÇÃO BLOQUEADA</Portuguese>
+            <Russian>СПАВН ЗАБЛОКИРОВАН</Russian>
+            <Arabic>الاستدعاء محظور</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_SpawnBlockedMsg">
+            <English>Spawn point is occupied — move the vehicle first</English>
+            <French>Le point de spawn est occupé — déplacez d'abord le véhicule</French>
+            <German>Der Spawnpunkt ist belegt — bewege zuerst das Fahrzeug</German>
+            <Spanish>El punto de creación está ocupado — mueve el vehículo primero</Spanish>
+            <Italian>Il punto di spawn è occupato — sposta prima il veicolo</Italian>
+            <Portuguese>O ponto de criação está ocupado — mova o veículo primeiro</Portuguese>
+            <Russian>Точка спавна занята — сначала уберите транспорт</Russian>
+            <Arabic>نقطة الاستدعاء مشغولة — انقل المركبة أولاً</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_AutoHoverTitle">
+            <English>AUTO HOVER DISABLED</English>
+            <French>MAINTIEN EN VOL DÉSACTIVÉ</French>
+            <German>AUTO-HOVER DEAKTIVIERT</German>
+            <Spanish>VUELO ESTACIONARIO DESACTIVADO</Spanish>
+            <Italian>HOVER AUTOMATICO DISABILITATO</Italian>
+            <Portuguese>PAIRAR AUTOMÁTICO DESATIVADO</Portuguese>
+            <Russian>АВТОРЕЖИМ ВИСЕНИЯ ОТКЛЮЧЁН</Russian>
+            <Arabic>التحليق التلقائي معطّل</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_AutoHoverMsg">
+            <English>Auto Hover is not permitted.</English>
+            <French>Le maintien en vol automatique n'est pas autorisé.</French>
+            <German>Auto-Hover ist nicht erlaubt.</German>
+            <Spanish>El vuelo estacionario automático no está permitido.</Spanish>
+            <Italian>L'hover automatico non è consentito.</Italian>
+            <Portuguese>O pairar automático não é permitido.</Portuguese>
+            <Russian>Авторежим висения запрещён.</Russian>
+            <Arabic>التحليق التلقائي غير مسموح به.</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_HeliRespawnTitle">
+            <English>HELI RESPAWNED</English>
+            <French>HÉLICOPTÈRE RÉAPPARU</French>
+            <German>HELIKOPTER RESPAWNT</German>
+            <Spanish>HELICÓPTERO REAPARECIDO</Spanish>
+            <Italian>ELICOTTERO RISPAWNATO</Italian>
+            <Portuguese>HELICÓPTERO CRIADO NOVAMENTE</Portuguese>
+            <Russian>ВЕРТОЛЁТ ВОЗРОЖДЁН</Russian>
+            <Arabic>تمت إعادة استدعاء الطائرة</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_HeliRespawnMsg">
+            <English>Your helicopter was respawned above the crash site</English>
+            <French>Votre hélicoptère a réapparu au-dessus du site du crash</French>
+            <German>Dein Helikopter wurde über dem Absturzort respawnt</German>
+            <Spanish>Tu helicóptero reapareció sobre el lugar del accidente</Spanish>
+            <Italian>Il tuo elicottero è stato rispawnato sopra il sito dell'incidente</Italian>
+            <Portuguese>Seu helicóptero foi criado novamente acima do local da queda</Portuguese>
+            <Russian>Ваш вертолёт возрождён над местом крушения</Russian>
+            <Arabic>تمت إعادة استدعاء طائرتك فوق موقع الحادث</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_LandedTitle">
+            <English>Landed at %1!</English>
+            <French>Atterri à %1 !</French>
+            <German>Bei %1 gelandet!</German>
+            <Spanish>¡Aterrizó en %1!</Spanish>
+            <Italian>Atterrato a %1!</Italian>
+            <Portuguese>Pousou em %1!</Portuguese>
+            <Russian>Посадка в точке %1!</Russian>
+            <Arabic>هبط في %1!</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_LandedMsgTimer">
+            <English>%1m %2s  —  %3m from target</English>
+            <French>%1m %2s  —  %3m de la cible</French>
+            <German>%1m %2s  —  %3m vom Ziel</German>
+            <Spanish>%1m %2s  —  %3m del objetivo</Spanish>
+            <Italian>%1m %2s  —  %3m dal bersaglio</Italian>
+            <Portuguese>%1m %2s  —  %3m do alvo</Portuguese>
+            <Russian>%1м %2с  —  %3м от цели</Russian>
+            <Arabic>%1د %2ث  —  %3م من الهدف</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_LandedMsgDist">
+            <English>%1m from target</English>
+            <French>%1m de la cible</French>
+            <German>%1m vom Ziel</German>
+            <Spanish>%1m del objetivo</Spanish>
+            <Italian>%1m dal bersaglio</Italian>
+            <Portuguese>%1m do alvo</Portuguese>
+            <Russian>%1м от цели</Russian>
+            <Arabic>%1م من الهدف</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_VolumeTitle">
+            <English>VOLUME</English>
+            <French>VOLUME</French>
+            <German>LAUTSTÄRKE</German>
+            <Spanish>VOLUMEN</Spanish>
+            <Italian>VOLUME</Italian>
+            <Portuguese>VOLUME</Portuguese>
+            <Russian>ГРОМКОСТЬ</Russian>
+            <Arabic>مستوى الصوت</Arabic>
+        </Key>
+        <Key ID="STR_FI_Notify_VolumeMsg">
+            <English>Set to %1%%</English>
+            <French>Réglé à %1%%</French>
+            <German>Auf %1%% eingestellt</German>
+            <Spanish>Establecido a %1%%</Spanish>
+            <Italian>Impostato a %1%%</Italian>
+            <Portuguese>Definido para %1%%</Portuguese>
+            <Russian>Установлено: %1%%</Russian>
+            <Arabic>تم الضبط على %1%%</Arabic>
+        </Key>
+
+        <!-- ── Task strings ──────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Task_Title">
+            <English>Land safely at: %1</English>
+            <French>Atterrir en sécurité à : %1</French>
+            <German>Sicher landen bei: %1</German>
+            <Spanish>Aterrizar de forma segura en: %1</Spanish>
+            <Italian>Atterrare in sicurezza a: %1</Italian>
+            <Portuguese>Pousar com segurança em: %1</Portuguese>
+            <Russian>Безопасно приземлиться в: %1</Russian>
+            <Arabic>اهبط بأمان في: %1</Arabic>
+        </Key>
+        <Key ID="STR_FI_Task_Type">
+            <English>Landing Location</English>
+            <French>Lieu d'atterrissage</French>
+            <German>Landeplatz</German>
+            <Spanish>Ubicación de aterrizaje</Spanish>
+            <Italian>Punto di atterraggio</Italian>
+            <Portuguese>Local de pouso</Portuguese>
+            <Russian>Место посадки</Russian>
+            <Arabic>موقع الهبوط</Arabic>
+        </Key>
+        <Key ID="STR_FI_Task_Desc">
+            <English>Land at the marked location.</English>
+            <French>Atterrissez à l'emplacement indiqué.</French>
+            <German>Lande am markierten Ort.</German>
+            <Spanish>Aterriza en la ubicación marcada.</Spanish>
+            <Italian>Atterra nel punto indicato.</Italian>
+            <Portuguese>Pouse no local marcado.</Portuguese>
+            <Russian>Приземлитесь в отмеченном месте.</Russian>
+            <Arabic>اهبط في الموقع المحدد.</Arabic>
+        </Key>
+
+        <!-- ── Special location names ────────────────────────────────────────── -->
+        <Key ID="STR_FI_Loc_Custom">
+            <English>Custom</English>
+            <French>Personnalisé</French>
+            <German>Benutzerdefiniert</German>
+            <Spanish>Personalizado</Spanish>
+            <Italian>Personalizzato</Italian>
+            <Portuguese>Personalizado</Portuguese>
+            <Russian>Произвольное</Russian>
+            <Arabic>مخصص</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TimeTrial">
+            <English>Time Trial - Custom</English>
+            <French>Contre-la-montre - Personnalisé</French>
+            <German>Zeitfahren - Benutzerdefiniert</German>
+            <Spanish>Contrarreloj - Personalizado</Spanish>
+            <Italian>Prova a tempo - Personalizzato</Italian>
+            <Portuguese>Contrarrelógio - Personalizado</Portuguese>
+            <Russian>Заезд на время — произвольное</Russian>
+            <Arabic>سباق توقيت - مخصص</Arabic>
+        </Key>
+
+        <!-- ── Landing locations ─────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Loc_HospitalKavala">
+            <English>Hospital - Kavala</English>
+            <French>Hôpital - Kavala</French>
+            <German>Krankenhaus - Kavala</German>
+            <Spanish>Hospital - Kavala</Spanish>
+            <Italian>Ospedale - Kavala</Italian>
+            <Portuguese>Hospital - Kavala</Portuguese>
+            <Russian>Больница — Кавала</Russian>
+            <Arabic>المستشفى - كافالا</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_HillsideCopperHill">
+            <English>Hillside - Copper Hill</English>
+            <French>Flanc de colline - Copper Hill</French>
+            <German>Hang - Copper Hill</German>
+            <Spanish>Ladera - Copper Hill</Spanish>
+            <Italian>Pendio - Copper Hill</Italian>
+            <Portuguese>Encosta - Copper Hill</Portuguese>
+            <Russian>Склон — Медная гора</Russian>
+            <Arabic>منحدر التل - Copper Hill</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SpeedAgiosHospital">
+            <English>Speed - Agios Hospital</English>
+            <French>Vitesse - Hôpital d'Agios</French>
+            <German>Tempo - Agios Krankenhaus</German>
+            <Spanish>Velocidad - Hospital Agios</Spanish>
+            <Italian>Velocità - Ospedale Agios</Italian>
+            <Portuguese>Velocidade - Hospital Agios</Portuguese>
+            <Russian>Скорость — Больница Агиос</Russian>
+            <Arabic>السرعة - مستشفى Agios</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SitPrisonHill">
+            <English>Sit - Prison Hill</English>
+            <French>Palier - Colline de la Prison</French>
+            <German>Setzen - Prison Hill</German>
+            <Spanish>Asiento - Prison Hill</Spanish>
+            <Italian>Posata - Prison Hill</Italian>
+            <Portuguese>Sentar - Prison Hill</Portuguese>
+            <Russian>Посадка — Тюремный холм</Russian>
+            <Arabic>هبوط - تل السجن</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SitMainRoad">
+            <English>Sit - Main Road Intersection</English>
+            <French>Palier - Intersection de la Route Principale</French>
+            <German>Setzen - Hauptstraßenkreuzung</German>
+            <Spanish>Asiento - Intersección de la Carretera Principal</Spanish>
+            <Italian>Posata - Incrocio della Strada Principale</Italian>
+            <Portuguese>Sentar - Cruzamento da Estrada Principal</Portuguese>
+            <Russian>Посадка — Перекрёсток главной дороги</Russian>
+            <Arabic>هبوط - تقاطع الطريق الرئيسي</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SitAggelochori">
+            <English>Sit - Aggelochori</English>
+            <French>Palier - Aggelochori</French>
+            <German>Setzen - Aggelochori</German>
+            <Spanish>Asiento - Aggelochori</Spanish>
+            <Italian>Posata - Aggelochori</Italian>
+            <Portuguese>Sentar - Aggelochori</Portuguese>
+            <Russian>Посадка — Ангелохори</Russian>
+            <Arabic>هبوط - Aggelochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SitNeri">
+            <English>Sit - Neri</English>
+            <French>Palier - Neri</French>
+            <German>Setzen - Neri</German>
+            <Spanish>Asiento - Neri</Spanish>
+            <Italian>Posata - Neri</Italian>
+            <Portuguese>Sentar - Neri</Portuguese>
+            <Russian>Посадка — Нери</Russian>
+            <Arabic>هبوط - Neri</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SitNeriHill">
+            <English>Sit - Neri Hill</English>
+            <French>Palier - Colline de Neri</French>
+            <German>Setzen - Neri-Hügel</German>
+            <Spanish>Asiento - Colina Neri</Spanish>
+            <Italian>Posata - Collina di Neri</Italian>
+            <Portuguese>Sentar - Colina Neri</Portuguese>
+            <Russian>Посадка — Холм Нери</Russian>
+            <Arabic>هبوط - تل Neri</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_SteepNeri">
+            <English>Steep Spot - Neri</English>
+            <French>Pente raide - Neri</French>
+            <German>Steiler Hang - Neri</German>
+            <Spanish>Pendiente empinada - Neri</Spanish>
+            <Italian>Pendio ripido - Neri</Italian>
+            <Portuguese>Encosta íngreme - Neri</Portuguese>
+            <Russian>Крутой склон — Нери</Russian>
+            <Arabic>منحدر حاد - Neri</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TightKavala">
+            <English>Tight Spot/Built up - Kavala</English>
+            <French>Zone étroite/Urbanisée - Kavala</French>
+            <German>Enger Bereich/Bebaut - Kavala</German>
+            <Spanish>Zona estrecha/Urbanizada - Kavala</Spanish>
+            <Italian>Zona stretta/Edificata - Kavala</Italian>
+            <Portuguese>Área restrita/Urbanizada - Kavala</Portuguese>
+            <Russian>Тесное место/Застройка — Кавала</Russian>
+            <Arabic>مكان ضيق/منطقة عمرانية - كافالا</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TightAggelochori">
+            <English>Tight Spot/Built up - Aggelochori</English>
+            <French>Zone étroite/Urbanisée - Aggelochori</French>
+            <German>Enger Bereich/Bebaut - Aggelochori</German>
+            <Spanish>Zona estrecha/Urbanizada - Aggelochori</Spanish>
+            <Italian>Zona stretta/Edificata - Aggelochori</Italian>
+            <Portuguese>Área restrita/Urbanizada - Aggelochori</Portuguese>
+            <Russian>Тесное место/Застройка — Ангелохори</Russian>
+            <Arabic>مكان ضيق/منطقة عمرانية - Aggelochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TightNeri">
+            <English>Tight Spot/Built up - Neri</English>
+            <French>Zone étroite/Urbanisée - Neri</French>
+            <German>Enger Bereich/Bebaut - Neri</German>
+            <Spanish>Zona estrecha/Urbanizada - Neri</Spanish>
+            <Italian>Zona stretta/Edificata - Neri</Italian>
+            <Portuguese>Área restrita/Urbanizada - Neri</Portuguese>
+            <Russian>Тесное место/Застройка — Нери</Russian>
+            <Arabic>مكان ضيق/منطقة عمرانية - Neri</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TightNorthAggelochori">
+            <English>Tight Spot/Built up - North Aggelochori</English>
+            <French>Zone étroite/Urbanisée - Nord Aggelochori</French>
+            <German>Enger Bereich/Bebaut - Nord-Aggelochori</German>
+            <Spanish>Zona estrecha/Urbanizada - Norte Aggelochori</Spanish>
+            <Italian>Zona stretta/Edificata - Aggelochori Nord</Italian>
+            <Portuguese>Área restrita/Urbanizada - Aggelochori Norte</Portuguese>
+            <Russian>Тесное место/Застройка — Северный Ангелохори</Russian>
+            <Arabic>مكان ضيق/منطقة عمرانية - شمال Aggelochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Loc_TightAthira">
+            <English>Tight Spot/Built up - Athira</English>
+            <French>Zone étroite/Urbanisée - Athira</French>
+            <German>Enger Bereich/Bebaut - Athira</German>
+            <Spanish>Zona estrecha/Urbanizada - Athira</Spanish>
+            <Italian>Zona stretta/Edificata - Athira</Italian>
+            <Portuguese>Área restrita/Urbanizada - Athira</Portuguese>
+            <Russian>Тесное место/Застройка — Атира</Russian>
+            <Arabic>مكان ضيق/منطقة عمرانية - Athira</Arabic>
+        </Key>
+
+        <!-- ── Gas stations ──────────────────────────────────────────────────── -->
+        <Key ID="STR_FI_Gas_Kavala">
+            <English>Gas Station - Kavala</English>
+            <French>Station-service - Kavala</French>
+            <German>Tankstelle - Kavala</German>
+            <Spanish>Gasolinera - Kavala</Spanish>
+            <Italian>Stazione di servizio - Kavala</Italian>
+            <Portuguese>Posto de gasolina - Kavala</Portuguese>
+            <Russian>АЗС — Кавала</Russian>
+            <Arabic>محطة وقود - كافالا</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Aggelochori">
+            <English>Gas Station - Aggelochori</English>
+            <French>Station-service - Aggelochori</French>
+            <German>Tankstelle - Aggelochori</German>
+            <Spanish>Gasolinera - Aggelochori</Spanish>
+            <Italian>Stazione di servizio - Aggelochori</Italian>
+            <Portuguese>Posto de gasolina - Aggelochori</Portuguese>
+            <Russian>АЗС — Ангелохори</Russian>
+            <Arabic>محطة وقود - Aggelochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Kore">
+            <English>Gas Station - Kore</English>
+            <French>Station-service - Kore</French>
+            <German>Tankstelle - Kore</German>
+            <Spanish>Gasolinera - Kore</Spanish>
+            <Italian>Stazione di servizio - Kore</Italian>
+            <Portuguese>Posto de gasolina - Kore</Portuguese>
+            <Russian>АЗС — Коре</Russian>
+            <Arabic>محطة وقود - Kore</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Neochori">
+            <English>Gas Station - Neochori</English>
+            <French>Station-service - Neochori</French>
+            <German>Tankstelle - Neochori</German>
+            <Spanish>Gasolinera - Neochori</Spanish>
+            <Italian>Stazione di servizio - Neochori</Italian>
+            <Portuguese>Posto de gasolina - Neochori</Portuguese>
+            <Russian>АЗС — Неохори</Russian>
+            <Arabic>محطة وقود - Neochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Zaros">
+            <English>Gas Station - Zaros</English>
+            <French>Station-service - Zaros</French>
+            <German>Tankstelle - Zaros</German>
+            <Spanish>Gasolinera - Zaros</Spanish>
+            <Italian>Stazione di servizio - Zaros</Italian>
+            <Portuguese>Posto de gasolina - Zaros</Portuguese>
+            <Russian>АЗС — Зарос</Russian>
+            <Arabic>محطة وقود - Zaros</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Kalochori">
+            <English>Gas Station - Kalochori</English>
+            <French>Station-service - Kalochori</French>
+            <German>Tankstelle - Kalochori</German>
+            <Spanish>Gasolinera - Kalochori</Spanish>
+            <Italian>Stazione di servizio - Kalochori</Italian>
+            <Portuguese>Posto de gasolina - Kalochori</Portuguese>
+            <Russian>АЗС — Калохори</Russian>
+            <Arabic>محطة وقود - Kalochori</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Dorida">
+            <English>Gas Station - Dorida</English>
+            <French>Station-service - Dorida</French>
+            <German>Tankstelle - Dorida</German>
+            <Spanish>Gasolinera - Dorida</Spanish>
+            <Italian>Stazione di servizio - Dorida</Italian>
+            <Portuguese>Posto de gasolina - Dorida</Portuguese>
+            <Russian>АЗС — Дорида</Russian>
+            <Arabic>محطة وقود - Dorida</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Charkia">
+            <English>Gas Station - Charkia</English>
+            <French>Station-service - Charkia</French>
+            <German>Tankstelle - Charkia</German>
+            <Spanish>Gasolinera - Charkia</Spanish>
+            <Italian>Stazione di servizio - Charkia</Italian>
+            <Portuguese>Posto de gasolina - Charkia</Portuguese>
+            <Russian>АЗС — Харкия</Russian>
+            <Arabic>محطة وقود - Charkia</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Lakka">
+            <English>Gas Station - Lakka</English>
+            <French>Station-service - Lakka</French>
+            <German>Tankstelle - Lakka</German>
+            <Spanish>Gasolinera - Lakka</Spanish>
+            <Italian>Stazione di servizio - Lakka</Italian>
+            <Portuguese>Posto de gasolina - Lakka</Portuguese>
+            <Russian>АЗС — Лакка</Russian>
+            <Arabic>محطة وقود - Lakka</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Pyrgos">
+            <English>Gas Station - Pyrgos</English>
+            <French>Station-service - Pyrgos</French>
+            <German>Tankstelle - Pyrgos</German>
+            <Spanish>Gasolinera - Pyrgos</Spanish>
+            <Italian>Stazione di servizio - Pyrgos</Italian>
+            <Portuguese>Posto de gasolina - Pyrgos</Portuguese>
+            <Russian>АЗС — Пиргос</Russian>
+            <Arabic>محطة وقود - Pyrgos</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Rodopoli">
+            <English>Gas Station - Rodopoli</English>
+            <French>Station-service - Rodopoli</French>
+            <German>Tankstelle - Rodopoli</German>
+            <Spanish>Gasolinera - Rodopoli</Spanish>
+            <Italian>Stazione di servizio - Rodopoli</Italian>
+            <Portuguese>Posto de gasolina - Rodopoli</Portuguese>
+            <Russian>АЗС — Родополи</Russian>
+            <Arabic>محطة وقود - Rodopoli</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Katalaki">
+            <English>Gas Station - Katalaki</English>
+            <French>Station-service - Katalaki</French>
+            <German>Tankstelle - Katalaki</German>
+            <Spanish>Gasolinera - Katalaki</Spanish>
+            <Italian>Stazione di servizio - Katalaki</Italian>
+            <Portuguese>Posto de gasolina - Katalaki</Portuguese>
+            <Russian>АЗС — Каталаки</Russian>
+            <Arabic>محطة وقود - Katalaki</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Paros">
+            <English>Gas Station - Paros</English>
+            <French>Station-service - Paros</French>
+            <German>Tankstelle - Paros</German>
+            <Spanish>Gasolinera - Paros</Spanish>
+            <Italian>Stazione di servizio - Paros</Italian>
+            <Portuguese>Posto de gasolina - Paros</Portuguese>
+            <Russian>АЗС — Парос</Russian>
+            <Arabic>محطة وقود - Paros</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Telos">
+            <English>Gas Station - Telos</English>
+            <French>Station-service - Telos</French>
+            <German>Tankstelle - Telos</German>
+            <Spanish>Gasolinera - Telos</Spanish>
+            <Italian>Stazione di servizio - Telos</Italian>
+            <Portuguese>Posto de gasolina - Telos</Portuguese>
+            <Russian>АЗС — Телос</Russian>
+            <Arabic>محطة وقود - Telos</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Athira">
+            <English>Gas Station - Athira</English>
+            <French>Station-service - Athira</French>
+            <German>Tankstelle - Athira</German>
+            <Spanish>Gasolinera - Athira</Spanish>
+            <Italian>Stazione di servizio - Athira</Italian>
+            <Portuguese>Posto de gasolina - Athira</Portuguese>
+            <Russian>АЗС — Атира</Russian>
+            <Arabic>محطة وقود - Athira</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Oreokastro">
+            <English>Gas Station - Oreokastro</English>
+            <French>Station-service - Oreokastro</French>
+            <German>Tankstelle - Oreokastro</German>
+            <Spanish>Gasolinera - Oreokastro</Spanish>
+            <Italian>Stazione di servizio - Oreokastro</Italian>
+            <Portuguese>Posto de gasolina - Oreokastro</Portuguese>
+            <Russian>АЗС — Ореокастро</Russian>
+            <Arabic>محطة وقود - Oreokastro</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Selakano">
+            <English>Gas Station - Selakano</English>
+            <French>Station-service - Selakano</French>
+            <German>Tankstelle - Selakano</German>
+            <Spanish>Gasolinera - Selakano</Spanish>
+            <Italian>Stazione di servizio - Selakano</Italian>
+            <Portuguese>Posto de gasolina - Selakano</Portuguese>
+            <Russian>АЗС — Селакано</Russian>
+            <Arabic>محطة وقود - Selakano</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Molos">
+            <English>Gas Station - Molos</English>
+            <French>Station-service - Molos</French>
+            <German>Tankstelle - Molos</German>
+            <Spanish>Gasolinera - Molos</Spanish>
+            <Italian>Stazione di servizio - Molos</Italian>
+            <Portuguese>Posto de gasolina - Molos</Portuguese>
+            <Russian>АЗС — Молос</Russian>
+            <Arabic>محطة وقود - Molos</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Feres">
+            <English>Gas Station - Feres</English>
+            <French>Station-service - Feres</French>
+            <German>Tankstelle - Feres</German>
+            <Spanish>Gasolinera - Feres</Spanish>
+            <Italian>Stazione di servizio - Feres</Italian>
+            <Portuguese>Posto de gasolina - Feres</Portuguese>
+            <Russian>АЗС — Ферес</Russian>
+            <Arabic>محطة وقود - Feres</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Abdera">
+            <English>Gas Station - Abdera</English>
+            <French>Station-service - Abdera</French>
+            <German>Tankstelle - Abdera</German>
+            <Spanish>Gasolinera - Abdera</Spanish>
+            <Italian>Stazione di servizio - Abdera</Italian>
+            <Portuguese>Posto de gasolina - Abdera</Portuguese>
+            <Russian>АЗС — Абдера</Russian>
+            <Arabic>محطة وقود - Abdera</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Pygros">
+            <English>Gas Station - Pygros</English>
+            <French>Station-service - Pygros</French>
+            <German>Tankstelle - Pygros</German>
+            <Spanish>Gasolinera - Pygros</Spanish>
+            <Italian>Stazione di servizio - Pygros</Italian>
+            <Portuguese>Posto de gasolina - Pygros</Portuguese>
+            <Russian>АЗС — Пигрос</Russian>
+            <Arabic>محطة وقود - Pygros</Arabic>
+        </Key>
+        <Key ID="STR_FI_Gas_Sofia">
+            <English>Gas Station - Sofia</English>
+            <French>Station-service - Sofia</French>
+            <German>Tankstelle - Sofia</German>
+            <Spanish>Gasolinera - Sofia</Spanish>
+            <Italian>Stazione di servizio - Sofia</Italian>
+            <Portuguese>Posto de gasolina - Sofia</Portuguese>
+            <Russian>АЗС — София</Russian>
+            <Arabic>محطة وقود - Sofia</Arabic>
+        </Key>
+
+        <!-- ── Quick start default ───────────────────────────────────────────── -->
+        <Key ID="STR_FI_QuickStart_DefaultName">
+            <English>Speed - Agios Hospital</English>
+            <French>Vitesse - Hôpital d'Agios</French>
+            <German>Tempo - Agios Krankenhaus</German>
+            <Spanish>Velocidad - Hospital Agios</Spanish>
+            <Italian>Velocità - Ospedale Agios</Italian>
+            <Portuguese>Velocidade - Hospital Agios</Portuguese>
+            <Russian>Скорость — Больница Агиос</Russian>
+            <Arabic>السرعة - مستشفى Agios</Arabic>
+        </Key>
+
+    </Package>
+</Project>
