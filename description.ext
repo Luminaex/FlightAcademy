@@ -18,62 +18,62 @@ respawnDialog = 0;
 forceReconnect = 0;
 
 class Difficulty {
-    class CustomDifficulty {
-        class Options {
-            thirdPersonView = 1;
-            staminaBar = 0;          
-            weaponInfo = 1;          
-            stanceIndicator = 1;     
-            visorMode = 1;            
-            hudPermanent = 1;      
-            hudWp = 1;                
-            hudWpDist = 1;           
-            hudCrosshair = 0;        
-            icons3D = 1;   
-            mapContent = 1;           
-            autoReport = 0;          
-            cameraShake = 0;          
-            friendlyTags = 1;        
-            enemyTags = 0;            
-            detectedMines = 0;       
-            commands = 0;             
-            teamkillIndicator = 0;    
-            deathMessages = 1;       
-            vonID = 1;                
-            mapContentFriendly = 1;   
-            mapContentEnemy = 0;    
-            tacticalPing = 1;
-        };
-        aiLevelPreset = 1;
-    };
-    activeDifficulty = "CustomDifficulty";
+	class CustomDifficulty {
+		class Options {
+			thirdPersonView = 1;
+			staminaBar = 0;          
+			weaponInfo = 1;          
+			stanceIndicator = 1;     
+			visorMode = 1;            
+			hudPermanent = 1;      
+			hudWp = 1;                
+			hudWpDist = 1;           
+			hudCrosshair = 0;        
+			icons3D = 1;   
+			mapContent = 1;           
+			autoReport = 0;          
+			cameraShake = 0;          
+			friendlyTags = 1;        
+			enemyTags = 0;            
+			detectedMines = 0;       
+			commands = 0;             
+			teamkillIndicator = 0;    
+			deathMessages = 1;       
+			vonID = 1;                
+			mapContentFriendly = 1;   
+			mapContentEnemy = 0;    
+			tacticalPing = 1;
+		};
+		aiLevelPreset = 1;
+	};
+	activeDifficulty = "CustomDifficulty";
 };
 
 #include "FlightInstructorUI\dialog.hpp"
 #include "FlightInstructorUI\notify.hpp"
 
 class CfgFunctions {
-    class FTD {
-        class Client {
-            class enterHeli         { file = "functions\FTD_fnc_enterHeli.sqf"; };
-            class landingDetection  { file = "functions\FTD_fnc_landingDetection.sqf"; };
-            class locations         { file = "functions\FTD_fnc_locations.sqf"; };
-            class openInstructorUI  { file = "functions\FTD_fnc_openInstructorUI.sqf"; };
-            class openEarplugUI     { file = "functions\FTD_fnc_openEarplugUI.sqf"; };
-            class openMapPick       { file = "functions\FTD_fnc_openMapPick.sqf"; };
-            class quickStart        { file = "functions\FTD_fnc_quickStart.sqf"; };
-            class speedTimerHUD     { file = "functions\FTD_fnc_speedTimerHUD.sqf"; };
-            class notify              { file = "functions\FTD_fnc_notify.sqf"; };
-            class setLandingLocation { file = "functions\FTD_fnc_setLandingLocation.sqf"; };
-            class spawnVehicle      { file = "functions\FTD_fnc_spawnVehicle.sqf"; };
-            class openSpawnConfirm      { file = "functions\FTD_fnc_openSpawnConfirm.sqf"; };
-            class openTpPlayerSelect    { file = "functions\FTD_fnc_openTpPlayerSelect.sqf"; };
-            class tpPlayer              { file = "functions\FTD_fnc_tpPlayer.sqf"; };
-        };
-        class Server {
-            class respawnCar    { file = "functions\serverFunctions\FTD_fnc_respawnCar.sqf"; };
-            class taskManager   { file = "functions\serverFunctions\FTD_fnc_taskManager.sqf"; };
-            class reassignZeus  { file = "functions\serverFunctions\FTD_fnc_reassignZeus.sqf"; };
-        };
-    };
+	class FTD {
+		class Client {
+			class enterHeli             { file = "functions\FTD_fnc_enterHeli.sqf"; };
+			class landingDetection      { file = "functions\FTD_fnc_landingDetection.sqf"; };
+			class locations             { file = "functions\FTD_fnc_locations.sqf"; };
+			class openInstructorUI      { file = "functions\FTD_fnc_openInstructorUI.sqf"; };
+			class openEarplugUI         { file = "functions\FTD_fnc_openEarplugUI.sqf"; };
+			class openMapPick           { file = "functions\FTD_fnc_openMapPick.sqf"; };
+			class quickStart            { file = "functions\FTD_fnc_quickStart.sqf"; };
+			class speedTimerHUD         { file = "functions\FTD_fnc_speedTimerHUD.sqf"; };
+			class notify                { file = "functions\FTD_fnc_notify.sqf"; };
+			class setLandingLocation    { file = "functions\FTD_fnc_setLandingLocation.sqf"; };
+			class spawnVehicle          { file = "functions\FTD_fnc_spawnVehicle.sqf"; };
+			class openSpawnConfirm      { file = "functions\FTD_fnc_openSpawnConfirm.sqf"; };
+			class openTpPlayerSelect    { file = "functions\FTD_fnc_openTpPlayerSelect.sqf"; };
+			class tpPlayer              { file = "functions\FTD_fnc_tpPlayer.sqf"; };
+		};
+		class Server {
+			class respawnCar    { file = "functions\serverFunctions\FTD_fnc_respawnCar.sqf"; };
+			class taskManager   { file = "functions\serverFunctions\FTD_fnc_taskManager.sqf"; };
+			class reassignZeus  { file = "functions\serverFunctions\FTD_fnc_reassignZeus.sqf"; };
+		};
+	};
 };

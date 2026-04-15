@@ -31,8 +31,12 @@ switch _action do {
             // Cancel any pending delayed deletion from a previous succeed
             missionNamespace setVariable ["FlightTask_deleteId", (missionNamespace getVariable ["FlightTask_deleteId", 0]) + 1];
 
-            // Delete previous task
-            call _fnc_deleteCurrent;
+            // Delete previous task (inline: _fnc_deleteCurrent is not accessible inside spawn)
+            private _prevId = missionNamespace getVariable ["FlightTask_currentTaskId", ""];
+            if (_prevId != "" && { [_prevId] call BIS_fnc_taskExists }) then {
+                [_prevId] call BIS_fnc_deleteTask;
+            };
+            missionNamespace setVariable ["FlightTask_currentTaskId", ""];
 
             // Generate a unique task ID
             private _counter = (missionNamespace getVariable ["FlightTask_counter", 0]) + 1;

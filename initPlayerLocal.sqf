@@ -6,7 +6,6 @@ call FTD_fnc_locations;
 player enableStamina false;
 player setVariable["Saved_Loadout",getUnitLoadout player];
 player setVariable ["BIS_fnc_camera_allowThirdPerson", true, false];
-setTerrainGrid 50;
 
 // Respawn handler
 player addEventHandler ["Respawn", {
@@ -14,7 +13,6 @@ player addEventHandler ["Respawn", {
     _unit setPosATL (getPosATL roofSpawn);
     _unit enableStamina false;
     _unit setUnitTrait ["weaponSway", false];
-    setTerrainGrid 50;
 }];
 
 // Determine role and register keybinds once instructor slots are known.
