@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=84;
+		nextID=85;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3723.8093,48.048061,12972.37};
-		dir[]={0.6575923,-0.59042424,0.46794403};
-		up[]={0.48105776,0.80709302,0.34232169};
-		aside[]={0.5797894,0,-0.81476635};
+		pos[]={3768.7014,21.230284,12973.087};
+		dir[]={0.92221898,-0.38380098,0.047005273};
+		up[]={0.38330358,0.9234159,0.019536885};
+		aside[]={0.050903719,1.4915713e-09,-0.99870408};
 	};
 };
 binarizationWanted=0;
@@ -35,13 +35,14 @@ addons[]=
 	"A3_Structures_F_Civ_Offices",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Modules_F",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"A3_Props_F_AoW_Civilian_Gallery"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -91,7 +92,18 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item7
+		{
+			className="A3_Props_F_AoW";
+			name="Arma 3 Art of War - Decorative and Mission ";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
+};
+dlcs[]=
+{
+	"Aow"
 };
 randomSeed=2014144;
 class ScenarioData
@@ -153,7 +165,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=24;
+		items=25;
 		class Item0
 		{
 			dataType="Group";
@@ -1481,6 +1493,23 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3770.771,20.517944,12973.078};
+				angles[]={0,1.5536746,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="elevatorFloor";
+			};
+			id=84;
+			type="GalleryLabel_01_F";
+			atlOffset=1.4294205;
 		};
 	};
 };

@@ -2,6 +2,16 @@
 diag_log format ["[FTD][initPlayerLocal] Starting for %1 (%2)", name player, getPlayerUID player];
 call FTD_fnc_locations;
 
+// Elevator action
+elevatorFloor addAction ["Go to Roof", {
+    [] spawn {
+        [{
+            player setPosATL (getPosATL roofSpawn);
+            player setDir 268;
+        }] execVM "scripts\fnc_fadeTransport.sqf";
+    };
+}];
+
 // Local settings
 player enableStamina false;
 player setVariable["Saved_Loadout",getUnitLoadout player];
