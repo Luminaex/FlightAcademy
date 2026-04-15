@@ -4,6 +4,11 @@ private _t0 = diag_tickTime;
 call FTD_fnc_locations;
 diag_log format ["[FTD][initServer] Locations loaded: %1 entries", count FI_locations];
 
+// Broadcast instructor slot variables to all clients
+{
+    missionNamespace setVariable [_x, missionNamespace getVariable [_x, objNull], true];
+} forEach ["FlightInstructor_0", "FlightInstructor_1", "FlightInstructor_2", "FlightInstructor_3"];
+
 // Lock time to midday
 setDate [date select 0, date select 1, date select 2, 12, 0];
 setTimeMultiplier 0;

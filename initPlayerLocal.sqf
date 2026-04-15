@@ -2,15 +2,18 @@
 diag_log format ["[FTD][initPlayerLocal] Starting for %1 (%2)", name player, getPlayerUID player];
 call FTD_fnc_locations;
 
-// Elevator action
-elevatorFloor addAction ["Go to Roof", {
-    [] spawn {
-        [{
-            player setPosATL (getPosATL roofSpawn);
-            player setDir 268;
-        }] execVM "scripts\fnc_fadeTransport.sqf";
-    };
-}];
+// Elevator action (added once per client session)
+if (isNil "FTD_elevatorAction_added") then {
+    FTD_elevatorAction_added = true;
+    elevatorFloor addAction ["Go to Roof", {
+        [] spawn {
+            [{
+                player setPosATL (getPosATL roofSpawn);
+                player setDir 268;
+            }] execVM "scripts\fnc_fadeTransport.sqf";
+        };
+    }];
+};
 
 // Local settings
 player enableStamina false;
@@ -29,7 +32,14 @@ player addEventHandler ["Respawn", {
 // Named slots (FlightInstructor_0 etc.) are only non-null when a real player occupies them,
 // so we wait in a thread — this must NOT block the main script for Noctors.
 [] spawn {
-    waitUntil { !isNull (missionNamespace getVariable ["FlightInstructor_0", objNull]) };
+    private _timeout = diag_tickTime + 10;
+    waitUntil {
+        sleep 0.5;
+        (["FlightInstructor_0","FlightInstructor_1","FlightInstructor_2","FlightInstructor_3"] findIf {
+            !isNull (missionNamespace getVariable [_x, objNull])
+        }) != -1
+        || diag_tickTime > _timeout
+    };
     diag_log format ["[FTD][initPlayerLocal] Instructor slots populated for %1", name player];
 
     private _allowedUnits = [
