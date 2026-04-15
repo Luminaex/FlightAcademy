@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3767.8855,57.425365,12932.846};
-		dir[]={-0.09065596,-0.21603534,0.97216958};
-		up[]={-0.020058643,0.97638535,0.21510319};
-		aside[]={0.99568224,-3.6874553e-08,0.092848361};
+		pos[]={3759.9976,21.808994,12975.928};
+		dir[]={0.97223163,-0.18947971,0.13745712};
+		up[]={0.18762185,0.98188412,0.026526274};
+		aside[]={0.13999368,7.6397555e-08,-0.99016619};
 	};
 };
 binarizationWanted=0;
@@ -1510,6 +1510,23 @@ class Mission
 			id=84;
 			type="GalleryLabel_01_F";
 			atlOffset=1.4294205;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="#(rgb,8,8,3)color(0.72,0.10,0.10,1)";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
