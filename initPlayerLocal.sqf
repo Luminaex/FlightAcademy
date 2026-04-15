@@ -53,6 +53,9 @@ player addEventHandler ["Respawn", {
 
     if (player in _allowedUnits) then {
 
+        // Assign Zeus on initial join
+        [player] remoteExec ["FTD_fnc_reassignZeus", 2];
+
         // ── Instructor map binds ──────────────────────────────────────────────
         addMissionEventHandler ["Map", {
             params ["_mapIsOpened"];
@@ -158,15 +161,19 @@ player addEventHandler ["Respawn", {
 
         // ── Noctor earplug keybinds ───────────────────────────────────────────
         [] spawn {
+            private _ready = true;
             while { true } do {
-                if (inputAction "User10" > 0) then {
+                if (_ready && inputAction "User10" > 0) then {
+                    _ready = false;
                     call FTD_fnc_openEarplugUI;
                     sleep 1;
+                    _ready = true;
                 };
                 sleep 0.1;
             };
         };
 
+        // Windows key opens earplug settings
         missionNamespace setVariable ["winKeyReady", true];
         (findDisplay 46) displayAddEventHandler ["KeyDown", {
             params ["_display", "_key", "_shift", "_ctrl", "_alt"];
