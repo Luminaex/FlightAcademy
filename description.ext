@@ -69,6 +69,7 @@ class CfgFunctions {
 			class openSpawnConfirm      { file = "functions\FTD_fnc_openSpawnConfirm.sqf"; };
 			class openTpPlayerSelect    { file = "functions\FTD_fnc_openTpPlayerSelect.sqf"; };
 			class tpPlayer              { file = "functions\FTD_fnc_tpPlayer.sqf"; };
+			class fadeElevator          { file = "functions\FTD_fnc_fadeElevator.sqf"; };
 		};
 		class Server {
 			class respawnCar    { file = "functions\serverFunctions\FTD_fnc_respawnCar.sqf"; };

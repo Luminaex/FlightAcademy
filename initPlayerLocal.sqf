@@ -10,7 +10,7 @@ if (isNil "FTD_elevatorAction_added") then {
             [{
                 player setPosATL (getPosATL roofSpawn);
                 player setDir 268;
-            }] execVM "scripts\fnc_fadeTransport.sqf";
+            }] call FTD_fnc_fadeElevator;
         };
     }];
 };
