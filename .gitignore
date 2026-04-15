@@ -1,6 +1,3 @@
-# Personal player data — never commit
-steam.txt
-
 # Claude Code local session state
 .claude/
 
