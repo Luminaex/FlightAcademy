@@ -19,6 +19,7 @@ if (isNil "FTD_elevatorAction_added") then {
 player enableStamina false;
 player setVariable["Saved_Loadout",getUnitLoadout player];
 player setVariable ["BIS_fnc_camera_allowThirdPerson", true, false];
+setTerrainGrid 50; 
 
 // Respawn handler
 player addEventHandler ["Respawn", {
