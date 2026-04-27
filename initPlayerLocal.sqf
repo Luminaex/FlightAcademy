@@ -2,19 +2,6 @@
 diag_log format ["[FTD][initPlayerLocal] Starting for %1 (%2)", name player, getPlayerUID player];
 call FTD_fnc_locations;
 
-// Elevator action (added once per client session)
-if (isNil "FTD_elevatorAction_added") then {
-    FTD_elevatorAction_added = true;
-    elevatorFloor addAction ["Go to Roof", {
-        [] spawn {
-            [{
-                player setPosATL (getPosATL roofSpawn);
-                player setDir 268;
-            }] call FTD_fnc_fadeElevator;
-        };
-    }];
-};
-
 // Local settings
 player enableStamina false;
 player setVariable["Saved_Loadout",getUnitLoadout player];

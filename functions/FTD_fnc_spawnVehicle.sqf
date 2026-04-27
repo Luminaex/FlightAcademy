@@ -53,7 +53,6 @@ private _heliName = switch (_vehicleClass) do {
     case "O_Heli_Light_02_unarmed_F":   { "Orca" };
     default { _vehicleClass };
 };
-player setVariable ["FI_activeHeliName", _heliName, true];
 
 diag_log format ["[FTD][spawnVehicle] %1 spawned %2 (%3) at %4 in %5s", _uid, _heliName, _vehicleClass, _helipadPos, round ((diag_tickTime - _t0) * 100) / 100];
 
