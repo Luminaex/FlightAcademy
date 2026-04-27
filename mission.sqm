@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=85;
+		nextID=91;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3759.9976,21.808994,12975.928};
-		dir[]={0.96145368,-0.15424696,0.22762837};
-		up[]={0.15009762,0.98803228,0.035536271};
-		aside[]={0.23038554,0,-0.97309941};
+		pos[]={3713.1956,44.661709,13005.31};
+		dir[]={0.77812684,-0.569278,-0.26540762};
+		up[]={0.53879845,0.8221451,-0.18377624};
+		aside[]={-0.32282335,-1.4901161e-08,-0.94645929};
 	};
 };
 binarizationWanted=0;
@@ -36,13 +36,15 @@ addons[]=
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Modules_F",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Props_F_AoW_Civilian_Gallery"
+	"A3_Props_F_AoW_Civilian_Gallery",
+	"A3_Soft_F_Gamma_Hatchback_01",
+	"A3_Soft_F_MRAP_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=8;
+		items=10;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -96,6 +98,20 @@ class AddonsMetaData
 		{
 			className="A3_Props_F_AoW";
 			name="Arma 3 Art of War - Decorative and Mission ";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -165,7 +181,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=25;
+		items=29;
 		class Item0
 		{
 			dataType="Group";
@@ -986,22 +1002,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3765.5,34,12977};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="roofSpawn";
-			};
-			id=26;
-			type="Land_HelipadEmpty_F";
-			atlOffset=15.003555;
-		};
-		class Item4
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={3731.7009,38.467766,12976.323};
 				angles[]={0,3.1415927,0};
 			};
@@ -1014,7 +1014,7 @@ class Mission
 			type="Land_HelipadEmpty_F";
 			atlOffset=0.10479355;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Marker";
 			position[]={3540.186,11.585,12886.009};
@@ -1026,7 +1026,7 @@ class Mission
 			id=44;
 			atlOffset=0.00021457672;
 		};
-		class Item6
+		class Item5
 		{
 			dataType="Marker";
 			position[]={3281.4016,-6.8470473,12881.549};
@@ -1038,7 +1038,7 @@ class Mission
 			id=46;
 			atlOffset=1.4610572;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Marker";
 			position[]={2964.6145,-10.123907,12939.54};
@@ -1050,7 +1050,7 @@ class Mission
 			id=47;
 			atlOffset=2.1321526;
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Marker";
 			position[]={2796.1816,-10.694391,13085.636};
@@ -1062,7 +1062,7 @@ class Mission
 			id=48;
 			atlOffset=4.2618256;
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Marker";
 			position[]={2810.6824,-19.928822,13299.764};
@@ -1073,7 +1073,7 @@ class Mission
 			angle=41.104774;
 			id=49;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Marker";
 			position[]={2982.4614,-20.380207,13414.633};
@@ -1085,7 +1085,7 @@ class Mission
 			id=50;
 			atlOffset=1.9073486e-06;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Marker";
 			position[]={3154.2407,-10.749931,13376.715};
@@ -1097,7 +1097,7 @@ class Mission
 			id=51;
 			atlOffset=9.5367432e-07;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Marker";
 			position[]={3349.4438,0.13368607,13279.689};
@@ -1109,7 +1109,7 @@ class Mission
 			id=52;
 			atlOffset=9.3412676;
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Marker";
 			position[]={3530.147,6.607666,13145.859};
@@ -1121,7 +1121,7 @@ class Mission
 			id=53;
 			atlOffset=0.00014305115;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1137,7 +1137,7 @@ class Mission
 			id=54;
 			type="Land_HelipadRescue_F";
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1154,7 +1154,7 @@ class Mission
 			type="Land_Offices_01_V1_F";
 			atlOffset=7.6293945e-06;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Object";
 			class PositionInfo
@@ -1170,7 +1170,7 @@ class Mission
 			id=56;
 			type="Land_Medevac_HQ_V1_F";
 		};
-		class Item17
+		class Item16
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1212,7 +1212,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item18
+		class Item17
 		{
 			dataType="Marker";
 			position[]={9719.6445,114,15880.191};
@@ -1221,7 +1221,7 @@ class Mission
 			colorName="ColorRed";
 			id=62;
 		};
-		class Item19
+		class Item18
 		{
 			dataType="Marker";
 			position[]={3762.335,18.85,12990.128};
@@ -1230,7 +1230,7 @@ class Mission
 			colorName="ColorRed";
 			id=63;
 		};
-		class Item20
+		class Item19
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1296,7 +1296,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item21
+		class Item20
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1362,7 +1362,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item22
+		class Item21
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1428,7 +1428,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item23
+		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -1494,22 +1494,23 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3770.771,20.517944,12973.078};
-				angles[]={0,1.5536746,0};
+				position[]={3770.7329,20.203623,12973.085};
+				angles[]={4.712389,4.712389,6.270113};
 			};
 			side="Empty";
 			class Attributes
 			{
+				init="if (hasInterface) then { this addAction [""Go to Roof"", { [] spawn { [{ player setPosATL (getPosATL roofSpawn); player setDir 268; }] call FTD_fnc_fadeElevator; }; }]; }; " \n "";
 				name="elevatorFloor";
 			};
 			id=84;
 			type="GalleryLabel_01_F";
-			atlOffset=1.4294205;
+			atlOffset=1.1150799;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1521,12 +1522,113 @@ class Mission
 						class data
 						{
 							singleType="STRING";
-							value="#(rgb,8,8,3)color(0.72,0.10,0.10,1)";
+							value="#(argb,8,8,3)color(0,0,0,0)";
 						};
 					};
 				};
 				nAttributes=1;
 			};
+		};
+		class Item24
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3767.51,35.911736,12979.615};
+				angles[]={1.5707964,1.5536746,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				init="if (hasInterface) then { this addAction [""Go to Ground"", { [] spawn { [{ player setPosATL [3769.28,12974.8,0.0699997]; player setDir 268; }] call FTD_fnc_fadeElevator; }; }]; }; " \n "";
+				name="elevatorRoof";
+			};
+			id=85;
+			type="GalleryLabel_01_F";
+			atlOffset=1.4522705;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="#(argb,8,8,3)color(0,0,0,0)";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item25
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3734.228,18.815907,12992.329};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="groundSpawn";
+			};
+			id=87;
+			type="Land_HelipadEmpty_F";
+			atlOffset=1.9073486e-06;
+		};
+		class Item26
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3737.646,20.288216,12990.904};
+				angles[]={0,0.022427481,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectTextureGlobal [0, ""Textures\AirHatch4.paa""];";
+			};
+			id=88;
+			type="C_Hatchback_01_sport_F";
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3740.666,20.973566,12992.332};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this setObjectTextureGlobal [0, ""Textures\HunterFront.paa""]; this setObjectTextureGlobal [1, ""#(argb,8,8,3)color(0,0,0,0)""];";
+			};
+			id=89;
+			type="B_MRAP_01_F";
+			atlOffset=-0.057094574;
+		};
+		class Item28
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3765.624,34.366993,12977.194};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="roofSpawn";
+			};
+			id=90;
+			type="Land_HelipadEmpty_F";
+			atlOffset=0.0012626648;
 		};
 	};
 };
