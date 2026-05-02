@@ -22,7 +22,7 @@ Whitelisted in the database. Has access to the full instructor panel (opened wit
 - **Clear task** — cancels the active landing task.
 
 ### Student
-Role assigned to anyone not on the whitelist. Gets the earplug volume UI on the Windows key or User10 action. Receives map tasks and landing notifications when they complete a landing.
+Role assigned to anyone not on the whitelist. Receives map tasks and landing notifications when they complete a landing.
 
 ## Features
 
