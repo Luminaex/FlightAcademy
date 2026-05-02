@@ -1,6 +1,6 @@
 # Flight Academy
 
-An Arma 3 multiplayer mission set on Altis designed to help players learn and improve helicopter flying. Supports 1–7 players with up to 4 instructor slots and unlimited student slots.
+An Arma 3 multiplayer mission set on Altis designed to help players learn and improve helicopter flying.
 
 ## Overview
 
