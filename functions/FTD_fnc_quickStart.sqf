@@ -45,13 +45,9 @@ missionNamespace setVariable ["FI_speedTimer_active", false];
     diag_log format ["[FTD][quickStart] Engine started — timer running for %1", typeOf _heli];
 
     // Show HUD on all instructors currently in this heli
-    private _allowedUnits = [
-        missionNamespace getVariable ["FlightInstructor_0", objNull],
-        missionNamespace getVariable ["FlightInstructor_1", objNull],
-        missionNamespace getVariable ["FlightInstructor_2", objNull],
-        missionNamespace getVariable ["FlightInstructor_3", objNull]
-    ];
-    private _targets = (crew _heli) select { _x in _allowedUnits };
+    private _targets = (crew _heli) select {
+        isPlayer _x && { (missionNamespace getVariable [format ["FI_playerRole_%1", getPlayerUID _x], "student"]) == "instructor" }
+    };
     [_startTime] remoteExec ["FTD_fnc_speedTimerHUD", _targets];
 
     // Wait for timer to end on this machine

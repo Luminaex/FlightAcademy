@@ -85,65 +85,6 @@ private _fnc_addDepth = {
     [_hi, _sh]
 };
 
-// ── Left player panel — sized to match green box in screenshot ────────────────
-private _playerPanelW = 0.165;
-private _playerPanelX = _sz_x;
-private _playerPanelY = _sz_y + _sz_h * 0.635;
-private _playerPanelH = _btnY - _playerPanelY;
-private _playerRowH   = 0.040;
-private _playerPad    = 0.006;
-
-private _playerPanelBg = [_playerPanelX, _playerPanelY, _playerPanelW, _playerPanelH, "", _dark, [0,0,0,0], "RobotoCondensed", 0.020] call _fnc_makeText;
-
-// Title strip
-private _playerStripH   = 0.006;
-private _playerTitleH   = 0.028;
-private _playerStripCtrl = [_playerPanelX, _playerPanelY, _playerPanelW, _playerStripH, "", _nhsBlueS, [0,0,0,0], "RobotoCondensed", 0.01] call _fnc_makeText;
-private _playerTitleCtrl = _d ctrlCreate ["RscStructuredText", -1];
-_playerTitleCtrl ctrlSetPosition [_playerPanelX, _playerPanelY + _playerStripH, _playerPanelW, _playerTitleH];
-_playerTitleCtrl ctrlSetBackgroundColor [0.04, 0.04, 0.04, 0.95];
-_playerTitleCtrl ctrlSetStructuredText parseText format ["<t align='center' font='RobotoCondensedBold' size='0.70' color='#FFFFFF'>%1</t>", localize "STR_FI_Panel_Players"];
-_playerTitleCtrl ctrlCommit 0;
-
-// Build checkbox rows for each online player.
-// Solo test mode: if no other players are online, include yourself so TP/notify
-// remoteExec paths can be tested without a second client.
-private _otherPlayers = allPlayers - [player];
-private _panelPlayers = if (count _otherPlayers == 0) then { [player] } else { _otherPlayers };
-
-private _playerListStartY = _playerPanelY + _playerStripH + _playerTitleH + _playerPad;
-private _playerCheckboxes = []; // each element: [checkboxCtrl, labelCtrl, player]
-
-{
-    private _pl = _x;
-    private _rowY = _playerListStartY + (_forEachIndex * _playerRowH);
-
-    private _cb = _d ctrlCreate ["RscCheckbox", -1];
-    _cb ctrlSetPosition [_playerPanelX + _playerPad, _rowY + 0.009, 0.022, 0.022];
-    _cb ctrlSetChecked true;
-    _cb ctrlCommit 0;
-
-    // Label includes "(solo)" tag when testing against yourself
-    private _labelText = if (_pl == player) then {
-        format [localize "STR_FI_Panel_Solo", name _pl]
-    } else {
-        name _pl
-    };
-
-    private _lbl = _d ctrlCreate ["RscText", -1];
-    _lbl ctrlSetPosition [_playerPanelX + _playerPad + 0.028, _rowY + 0.004, _playerPanelW - (_playerPad * 2) - 0.028, _playerRowH - 0.008];
-    _lbl ctrlSetText _labelText;
-    _lbl ctrlSetFont "RobotoCondensed";
-    _lbl ctrlSetFontHeight 0.022;
-    _lbl ctrlSetTextColor [1,1,1,1];
-    _lbl ctrlSetBackgroundColor [0,0,0,0];
-    _lbl ctrlCommit 0;
-
-    _playerCheckboxes pushBack [_cb, _lbl, _pl];
-} forEach _panelPlayers;
-
-uiNamespace setVariable ["FI_playerCheckboxes", _playerCheckboxes];
-
 // ── Right panel background ────────────────────────────────────────────────────
 private _listBg = [_listX, _listY, _listW, _listH, "", _dark, [0,0,0,0], "RobotoCondensed", 0.020] call _fnc_makeText;
 
@@ -283,6 +224,16 @@ private _btnVolume = [5 call _fnc_btnL, _btnY, _btnW, _btnH, localize "STR_FI_Bt
     { call FTD_fnc_openEarplugUI; }] call _fnc_makeBtn;
 private _depVolume = [5 call _fnc_btnL, _btnY, _btnW, _btnH, _hiEdge] call _fnc_addDepth;
 
+private _btnSAR = [6 call _fnc_btnL, _btnY, _btnW, _btnH, "SAR Mission", _dark, _textW,
+    {
+        if (missionNamespace getVariable ["SAR_active", false]) then {
+            call FTD_fnc_SAR_openConfirm;
+        } else {
+            [getPlayerUID player] remoteExec ["FTD_fnc_SAR_startMission", 2];
+        };
+    }] call _fnc_makeBtn;
+private _depSAR = [6 call _fnc_btnL, _btnY, _btnW, _btnH, _hiEdge] call _fnc_addDepth;
+
 // ── Right buttons ─────────────────────────────────────────────────────────────
 private _btnSet = [2 call _fnc_btnR, _btnY, _btnW, _btnH, localize "STR_FI_Btn_SetLanding", _dark, _textW,
     {
@@ -318,9 +269,24 @@ private _btnClear = [0 call _fnc_btnR, _btnY, _btnW, _btnH, localize "STR_FI_Btn
     }] call _fnc_makeBtn;
 private _depClear = [0 call _fnc_btnR, _btnY, _btnW, _btnH, _hiEdge] call _fnc_addDepth;
 
-// Flatten player panel checkbox/label controls into cleanup list
-private _playerPanelCtrls = [_playerPanelBg, _playerStripCtrl, _playerTitleCtrl];
-{ _playerPanelCtrls pushBack (_x select 0); _playerPanelCtrls pushBack (_x select 1); } forEach _playerCheckboxes; // select 0 = checkbox, select 1 = label (select 2 = player, not a control)
+private _sarActive = missionNamespace getVariable ["SAR_active", false];
+private _btnSARMark = [3 call _fnc_btnR, _btnY, _btnW, _btnH, "Mark Pilot", if (_sarActive) then {_dark} else {[0.08,0.08,0.08,0.95]}, if (_sarActive) then {_textW} else {[0.4,0.4,0.4,1]},
+    {
+        if !(missionNamespace getVariable ["SAR_active", false]) exitWith {
+            ["SAR Inactive", "No SAR mission is currently active.", "warning"] call FTD_fnc_notify;
+        };
+        private _victim = missionNamespace getVariable ["SAR_victim", objNull];
+        if (isNull _victim) exitWith {};
+        private _pos = getPosATL (vehicle _victim);
+        deleteMarker "SAR_InstructorMark";
+        private _m = createMarker ["SAR_InstructorMark", _pos];
+        _m setMarkerShape "ICON";
+        _m setMarkerType "hd_dot";
+        _m setMarkerColor "ColorRed";
+        _m setMarkerText "Pilot";
+        ["Pilot Marked", "Pilot position marked on the map.", "info", _pos] call FTD_fnc_notify;
+    }] call _fnc_makeBtn;
+private _depSARMark = [3 call _fnc_btnR, _btnY, _btnW, _btnH, if (_sarActive) then {_hiEdge} else {[0.15,0.15,0.15,0.5]}] call _fnc_addDepth;
 
 // Store all controls for cleanup
 private _ctrls = [_hint, _listBg, _list, _bottomBar,
@@ -330,14 +296,15 @@ private _ctrls = [_hint, _listBg, _list, _bottomBar,
     _btnCar,   _depCar select 0,   _depCar select 1,
     _btnPath,  _depPath select 0,  _depPath select 1,
     _btnVolume,_depVolume select 0,_depVolume select 1,
-    _btnSet,   _depSet select 0,   _depSet select 1,
-    _btnMapPick,_depMapPick select 0,_depMapPick select 1,
-    _btnClear, _depClear select 0, _depClear select 1]
-    + _playerPanelCtrls;
+    _btnSAR,   _depSAR select 0,   _depSAR select 1,
+    _btnSet,     _depSet select 0,     _depSet select 1,
+    _btnMapPick, _depMapPick select 0, _depMapPick select 1,
+    _btnClear,   _depClear select 0,   _depClear select 1,
+    _btnSARMark, _depSARMark select 0, _depSARMark select 1];
 uiNamespace setVariable ["FI_overlayCtrls", _ctrls];
 uiNamespace setVariable ["FI_overlayOpening", false];
 
-diag_log format ["[FTD][openInstructorUI] UI built in %1s — %2 locations, %3 player(s)", round ((diag_tickTime - _t0) * 100) / 100, count FI_locations, count _panelPlayers];
+diag_log format ["[FTD][openInstructorUI] UI built in %1s — %2 locations", round ((diag_tickTime - _t0) * 100) / 100, count FI_locations];
 
 // Pan map and place initial marker
 private _firstPos = (FI_locations select 0) select 0;

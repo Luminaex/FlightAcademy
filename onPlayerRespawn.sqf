@@ -12,25 +12,18 @@ player setPosATL (getPosATL roofSpawn);
 player setDir 268;
 player setObjectTextureGlobal [0, "Textures\nhs_air_trauma_co.paa"];
 
-private _allowedUnits = [
-    missionNamespace getVariable ["FlightInstructor_0", objNull],
-    missionNamespace getVariable ["FlightInstructor_1", objNull],
-    missionNamespace getVariable ["FlightInstructor_2", objNull],
-    missionNamespace getVariable ["FlightInstructor_3", objNull]
-];
+private _isInstructor = (missionNamespace getVariable [format ["FI_playerRole_%1", getPlayerUID player], "student"]) == "instructor";
 
 // All players are invulnerable — this is a training mission
 player allowDamage false;
 
 // Re-assign Zeus curator to the new player entity after respawn
-// (the curator module loses its owner when the old entity is destroyed)
-if (player in _allowedUnits) then {
-    private _respawnedPlayer = player;
-    [_respawnedPlayer] remoteExec ["FTD_fnc_reassignZeus", 2];
+if (_isInstructor) then {
+    [player] remoteExec ["FTD_fnc_reassignZeus", 2];
 };
 
 // Instructors get a heli crash monitor: if their heli is destroyed, respawn it 100m up
-if (player in _allowedUnits) then {
+if (_isInstructor) then {
     [] spawn {
         private _uid = getPlayerUID player;
         private _varName = format ["FI_heli_%1", _uid];

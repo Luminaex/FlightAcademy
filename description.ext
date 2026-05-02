@@ -1,4 +1,4 @@
-onLoadName = "Flight Academy";
+﻿onLoadName = "Flight Academy";
 onLoadMission = "To help learn or improve your flying.";
 author = "Luminaex";
 loadScreen = "Textures\loadScreen_ca.paa";
@@ -6,8 +6,8 @@ loadScreen = "Textures\loadScreen_ca.paa";
 class Header
 {
 	gameType = "Sandbox";	
-	minPlayer = 1;	
-	maxPlayer = 7;	
+	minPlayers = 1;
+	maxPlayers = 7;
 };
 
 disabledAI = 1;
@@ -67,13 +67,30 @@ class CfgFunctions {
 			class setLandingLocation    { file = "functions\FTD_fnc_setLandingLocation.sqf"; };
 			class spawnVehicle          { file = "functions\FTD_fnc_spawnVehicle.sqf"; };
 			class openSpawnConfirm      { file = "functions\FTD_fnc_openSpawnConfirm.sqf"; };
-			class openTpPlayerSelect    { file = "functions\FTD_fnc_openTpPlayerSelect.sqf"; };
-			class tpPlayer              { file = "functions\FTD_fnc_tpPlayer.sqf"; };
 		};
 		class Server {
-			class respawnCar    { file = "functions\serverFunctions\FTD_fnc_respawnCar.sqf"; };
-			class taskManager   { file = "functions\serverFunctions\FTD_fnc_taskManager.sqf"; };
-			class reassignZeus  { file = "functions\serverFunctions\FTD_fnc_reassignZeus.sqf"; };
+			class respawnCar        { file = "functions\serverFunctions\FTD_fnc_respawnCar.sqf"; };
+			class taskManager       { file = "functions\serverFunctions\FTD_fnc_taskManager.sqf"; };
+			class reassignZeus      { file = "functions\serverFunctions\FTD_fnc_reassignZeus.sqf"; };
+			class db                { file = "functions\serverFunctions\FTD_fnc_db.sqf"; };
+			class dbProxy           { file = "functions\serverFunctions\FTD_fnc_dbProxy.sqf"; };
+			class whitelistCheck    { file = "functions\serverFunctions\FTD_fnc_whitelistCheck.sqf"; };
+		};
+		class SAR_Client {
+			class SAR_notify          { file = "functions\SAR\client\FTD_fnc_SAR_notify.sqf"; };
+			class SAR_notifySuccess   { file = "functions\SAR\client\FTD_fnc_SAR_notifySuccess.sqf"; };
+			class SAR_notifyBoarded   { file = "functions\SAR\client\FTD_fnc_SAR_notifyBoarded.sqf"; };
+			class SAR_notifyUnloaded  { file = "functions\SAR\client\FTD_fnc_SAR_notifyUnloaded.sqf"; };
+			class SAR_addDragActions  { file = "functions\SAR\client\FTD_fnc_SAR_addDragActions.sqf"; };
+			class SAR_applyDownedAnim { file = "functions\SAR\client\FTD_fnc_SAR_applyDownedAnim.sqf"; };
+			class SAR_openConfirm     { file = "functions\SAR\client\FTD_fnc_SAR_openConfirm.sqf"; };
+		};
+		class SAR_Server {
+			class SAR_startMission  { file = "functions\SAR\server\FTD_fnc_SAR_startMission.sqf"; };
+			class SAR_detection     { file = "functions\SAR\server\FTD_fnc_SAR_detection.sqf"; };
+			class SAR_onRescue      { file = "functions\SAR\server\FTD_fnc_SAR_onRescue.sqf"; };
+			class SAR_cleanup       { file = "functions\SAR\server\FTD_fnc_SAR_cleanup.sqf"; };
+			class SAR_taskManager   { file = "functions\SAR\server\FTD_fnc_SAR_taskManager.sqf"; };
 		};
 	};
 };

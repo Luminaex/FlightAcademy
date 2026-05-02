@@ -2,36 +2,16 @@
 <Project name="FlightTest">
     <Package name="FlightInstructor">
 
-        <!-- ── UI Panel ──────────────────────────────────────────────────────── -->
-        <Key ID="STR_FI_Panel_Players">
-            <English>PLAYERS</English>
-            <French>JOUEURS</French>
-            <German>SPIELER</German>
-            <Spanish>JUGADORES</Spanish>
-            <Italian>GIOCATORI</Italian>
-            <Portuguese>JOGADORES</Portuguese>
-            <Russian>ИГРОКИ</Russian>
-            <Arabic>اللاعبون</Arabic>
-        </Key>
-        <Key ID="STR_FI_Panel_Solo">
-            <English>%1 (solo)</English>
-            <French>%1 (solo)</French>
-            <German>%1 (solo)</German>
-            <Spanish>%1 (solo)</Spanish>
-            <Italian>%1 (solo)</Italian>
-            <Portuguese>%1 (solo)</Portuguese>
-            <Russian>%1 (соло)</Russian>
-            <Arabic>%1 (منفرد)</Arabic>
-        </Key>
+
         <Key ID="STR_FI_Hint_Keybinds">
-            <English>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleport    &lt;t color='#CCCCCC'&gt;Shift+click&lt;/t&gt;  Time trial</English>
-            <French>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Téléporter    &lt;t color='#CCCCCC'&gt;Maj+clic&lt;/t&gt;  Contre-la-montre</French>
-            <German>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleportieren    &lt;t color='#CCCCCC'&gt;Umschalt+Klick&lt;/t&gt;  Zeitfahren</German>
-            <Spanish>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teleportar    &lt;t color='#CCCCCC'&gt;Mayús+clic&lt;/t&gt;  Contrarreloj</Spanish>
-            <Italian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teletrasporto    &lt;t color='#CCCCCC'&gt;Maiusc+clic&lt;/t&gt;  Prova a tempo</Italian>
-            <Portuguese>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Teletransportar    &lt;t color='#CCCCCC'&gt;Shift+clique&lt;/t&gt;  Contrarrelógio</Portuguese>
-            <Russian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Телепорт    &lt;t color='#CCCCCC'&gt;Shift+клик&lt;/t&gt;  Заезд на время</Russian>
-            <Arabic>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  نقل فوري    &lt;t color='#CCCCCC'&gt;Shift+نقر&lt;/t&gt;  سباق توقيت</Arabic>
+            <English>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Set landing    &lt;t color='#CCCCCC'&gt;Shift+F&lt;/t&gt;  Time trial    &lt;t color='#CCCCCC'&gt;Alt+click&lt;/t&gt;  Teleport</English>
+            <French>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Définir atterrissage    &lt;t color='#CCCCCC'&gt;Maj+F&lt;/t&gt;  Contre-la-montre    &lt;t color='#CCCCCC'&gt;Alt+clic&lt;/t&gt;  Téléporter</French>
+            <German>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Landung festlegen    &lt;t color='#CCCCCC'&gt;Umschalt+F&lt;/t&gt;  Zeitfahren    &lt;t color='#CCCCCC'&gt;Alt+Klick&lt;/t&gt;  Teleportieren</German>
+            <Spanish>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Fijar aterrizaje    &lt;t color='#CCCCCC'&gt;Mayús+F&lt;/t&gt;  Contrarreloj    &lt;t color='#CCCCCC'&gt;Alt+clic&lt;/t&gt;  Teleportar</Spanish>
+            <Italian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Imposta atterraggio    &lt;t color='#CCCCCC'&gt;Maiusc+F&lt;/t&gt;  Prova a tempo    &lt;t color='#CCCCCC'&gt;Alt+clic&lt;/t&gt;  Teletrasporto</Italian>
+            <Portuguese>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Definir pouso    &lt;t color='#CCCCCC'&gt;Shift+F&lt;/t&gt;  Contrarrelógio    &lt;t color='#CCCCCC'&gt;Alt+clique&lt;/t&gt;  Teletransportar</Portuguese>
+            <Russian>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  Задать посадку    &lt;t color='#CCCCCC'&gt;Shift+F&lt;/t&gt;  Заезд на время    &lt;t color='#CCCCCC'&gt;Alt+клик&lt;/t&gt;  Телепорт</Russian>
+            <Arabic>  &lt;t color='#CCCCCC'&gt;F&lt;/t&gt;  تحديد الهبوط    &lt;t color='#CCCCCC'&gt;Shift+F&lt;/t&gt;  سباق توقيت    &lt;t color='#CCCCCC'&gt;Alt+نقر&lt;/t&gt;  نقل فوري</Arabic>
         </Key>
 
         <!-- ── Buttons ───────────────────────────────────────────────────────── -->
@@ -259,26 +239,7 @@
             <Russian>Нажмите на карту, чтобы задать произвольное место посадки.</Russian>
             <Arabic>انقر على الخريطة لتحديد موقع هبوط مخصص.</Arabic>
         </Key>
-        <Key ID="STR_FI_Notify_TeleportedTitle">
-            <English>TELEPORTED</English>
-            <French>TÉLÉPORTÉ</French>
-            <German>TELEPORTIERT</German>
-            <Spanish>TELETRANSPORTADO</Spanish>
-            <Italian>TELETRASPORTATO</Italian>
-            <Portuguese>TELETRANSPORTADO</Portuguese>
-            <Russian>ТЕЛЕПОРТИРОВАН</Russian>
-            <Arabic>تم النقل الفوري</Arabic>
-        </Key>
-        <Key ID="STR_FI_Notify_TeleportedMsg">
-            <English>Moved to %1</English>
-            <French>Déplacé vers %1</French>
-            <German>Nach %1 versetzt</German>
-            <Spanish>Movido a %1</Spanish>
-            <Italian>Spostato a %1</Italian>
-            <Portuguese>Movido para %1</Portuguese>
-            <Russian>Перемещён в %1</Russian>
-            <Arabic>تم الانتقال إلى %1</Arabic>
-        </Key>
+
         <Key ID="STR_FI_Notify_SpawnBlockedTitle">
             <English>SPAWN BLOCKED</English>
             <French>SPAWN BLOQUÉ</French>

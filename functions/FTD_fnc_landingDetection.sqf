@@ -44,6 +44,7 @@
     missionNamespace setVariable ["FlightTask_active", objNull, false];
     missionNamespace setVariable ["FI_speedTimer_active", false];
     if (isPlayer player && { count (crew _heli) > 0 } && { player == (crew _heli select 0) }) then {
+        private _uid       = getPlayerUID player;
         private _startTime = missionNamespace getVariable ["FI_speedTimer_start", nil];
         if (!isNil "_startTime") then {
             private _elapsed = diag_tickTime - _startTime;
@@ -51,9 +52,13 @@
             private _secs = _elapsed - (_mins * 60);
             [format [localize "STR_FI_Notify_LandedTitle", _locationName], format [localize "STR_FI_Notify_LandedMsgTimer", _mins, [round _secs, 2] call BIS_fnc_numberText, round (_heli distance2D _targetPos)], "landing_success", _targetPos] call FTD_fnc_notify;
             missionNamespace setVariable ["FI_speedTimer_start", nil];
+            // Log time trial result — only update if it's a personal best
+            ["time_trial_update", [_uid, _elapsed]] remoteExec ["FTD_fnc_dbProxy", 2];
         } else {
             [format [localize "STR_FI_Notify_LandedTitle", _locationName], format [localize "STR_FI_Notify_LandedMsgDist", round (_heli distance2D _targetPos)], "landing_success", _targetPos] call FTD_fnc_notify;
         };
+        // Increment landing counter server-side
+        ["player_stat_inc", [_uid, "landings_completed"]] remoteExec ["FTD_fnc_dbProxy", 2];
     };
     ["succeed"] remoteExec ["FTD_fnc_taskManager", 2];
     deleteMarker "LandingMarker";
